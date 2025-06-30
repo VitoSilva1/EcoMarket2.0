@@ -17,6 +17,7 @@ public class SwaggerConfig {
             .title("API 2026 ventas ")
             .version("1.0")
             .description("Documentacion de la API para el sistema de venta"));
+            
 
     }
 }

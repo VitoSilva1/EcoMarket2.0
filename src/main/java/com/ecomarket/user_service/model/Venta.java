@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
+
 public class Venta {
 
     @Id

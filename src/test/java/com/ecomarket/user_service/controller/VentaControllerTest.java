@@ -62,9 +62,11 @@ public class VentaControllerTest {
         mockMvc.perform(post("/api/ventas")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(venta)))
-                .andExpect(status().isCreated());
+                .
+                andExpect(status().isCreated());
     }
 
+    
     // Prueba 3: Buscar venta por ID
     @Test
     void testBuscarVenta() throws Exception {

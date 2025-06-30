@@ -7,4 +7,5 @@ import com.ecomarket.user_service.model.Venta;
 
 @Repository
 public interface VentaRepository extends JpaRepository<Venta, Long> {
+    
 }
