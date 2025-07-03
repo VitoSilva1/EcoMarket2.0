@@ -48,8 +48,7 @@ public class VentaControllerTest {
         Mockito.when(ventaService.findAll()).thenReturn(Arrays.asList(venta));
         mockMvc.perform(get("/api/ventas"))
                 .andExpect(status().isOk());
-                //simula que el servicio devuelve una lista con una venta
-                //llama al endpoint GET /api/ventas
+                
 
     }
 
@@ -83,4 +82,17 @@ public class VentaControllerTest {
         mockMvc.perform(delete("/api/ventas/1", 1L))
                 .andExpect(status().isNoContent());
     }
+
+    
+    
 }
+
+//{
+//"marca": "MarcaX",
+//"modelo": "ModeloY",
+//"tipo_producto": "TipoA",
+//"fecha_venta": "2024-06-30",
+//"nombre_cliente": "Cliente1"
+//}
+
+

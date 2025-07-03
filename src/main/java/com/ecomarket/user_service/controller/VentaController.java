@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping ("/api/ventas")
-@Tag(name="Carreras", description="Operaciones relacionadas con ventas")
+@Tag(name="Ventas", description="Operaciones relacionadas con ventas")
 
 public class VentaController {
 
@@ -40,12 +40,14 @@ public class VentaController {
     }
 
     @PostMapping
+    @Operation(summary="crear una venta", description= "registra una nueva venta en el sistema")
     public ResponseEntity<Venta> guardar(@RequestBody Venta venta){
         Venta ventaNueva = ventaService.save(venta);
         return ResponseEntity.status(HttpStatus.CREATED).body(ventaNueva);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
+    @Operation(summary="Busca venta por id", description="Obtiene ventas por id")
     public ResponseEntity<Venta> buscar (@PathVariable Integer id){
         try{
             Venta venta = ventaService.findById(id);
@@ -55,7 +57,7 @@ public class VentaController {
         }
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         try {
             ventaService.delete(id);
@@ -66,3 +68,5 @@ public class VentaController {
     }
 
 }
+
+
